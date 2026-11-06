@@ -1,3 +1,50 @@
+# Implementação — Distributed Wagering Processor
+
+Serviço NestJS + TypeScript estrito + Bun 1.3.11, PostgreSQL, TypeORM e SQS/LocalStack.
+
+## Executar
+
+Requisitos: Bun 1.x e Docker Engine ativo. Na pasta do repositório:
+
+```sh
+bun install
+docker compose up -d postgres localstack
+bun run migrate
+bun run start
+```
+
+Em outro terminal, execute `bun run worker`. API em `http://localhost:3000`; PostgreSQL em `localhost:55432`; LocalStack em `localhost:4566`. Valores padrão estão em `src/db.ts` e `src/queue.ts`. Para mudar use DATABASE_URL, SQS_ENDPOINT, AWS_REGION, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY e PORT.
+
+O runtime nativo usa `wagering_app`, assim como o Compose. Migrations usam `MIGRATION_DATABASE_URL` separadamente e testes administrativos usam `TEST_DATABASE_URL`. Para correlação pseudonimizada de logs entre réplicas, configure a mesma `LOG_HMAC_KEY` secreta (mínimo 32 caracteres) em todas; sem ela, a chave é efêmera por processo. Veja [LOGGING.md](LOGGING.md) para campos permitidos, sanitização e configuração.
+
+Para subir toda a aplicação com três instâncias HTTP e dois workers:
+
+```sh
+docker compose up --build -d --scale api=3 --scale worker=2
+docker compose ps
+```
+
+Portas HTTP 3000–3002. A migration roda uma vez antes das aplicações. `docker compose stop` preserva os dados; não execute `down -v` se quiser manter as wallets. O worker expõe métricas na porta interna 9090.
+
+## Verificar
+
+```sh
+bun run typecheck
+bun run test
+bun run test:integration
+bun run test:load
+```
+
+Os testes de integração exigem PostgreSQL e LocalStack reais nas portas padrão e criam registros com UUIDs novos, sem limpar dados existentes. Prepare também a imagem e o usuário de runtime com `docker compose build` e `docker compose run --rm migrate`. Execute com os workers normais parados para que não consumam mensagens dos testes. A suíte abre três processos de API nas portas 3101–3103, testa concorrência e encerra um consumidor entre commit e ack; o teste SIGTERM usa um container temporário da imagem do worker na rede `backend-challenge_default` (use `COMPOSE_PROJECT_NAME=backend-challenge` se a pasta tiver outro nome). O cenário de redelivery leva cerca de um minuto por causa da visibilidade SQS. `bun run migrate -- --down` reverte a última migration e **pode apagar tabelas**, dependendo da migration: utilize apenas em banco descartável.
+
+O teste de carga, ao contrário da suíte de integração, exige os workers ativos e três APIs nas portas 3000–3002. `bun run test:load` salva um JSON por execução em `reports/`, com ambiente, configuração, percentis, throughput, erros, deltas de métricas, amostras de lag da outbox e reconciliação. Veja [LOAD_TEST.md](LOAD_TEST.md) para metodologia e resultados. Não execute as duas suítes simultaneamente.
+
+Leia [ARCHITECTURE.md](ARCHITECTURE.md) para decisões, códigos de erro, limites, autenticação e trade-offs. Autenticação está desabilitada intencionalmente; esta configuração é para desenvolvimento local.
+
+Documentação explicativa: [guia do sistema em PDF](output/pdf/guia-do-sistema.pdf). Evidências de execução: [logs e procedência](reports/logs/README.md).
+
+## Enunciado original
+
 # Technical Challenge — Distributed Wagering Processor
 
 ## Bem-vindo à Jungle Gaming 🦧

@@ -1,0 +1,61 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: wagering
+      POSTGRES_PASSWORD: wagering
+      POSTGRES_DB: wagering
+    ports: ["127.0.0.1:55432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wagering"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  localstack:
+    image: localstack/localstack:4.10.0
+    environment:
+      SERVICES: sqs
+      SQS_ENDPOINT_STRATEGY: path
+    ports: ["127.0.0.1:4566:4566"]
+    healthcheck:
+      test: ["CMD", "awslocal", "sqs", "list-queues"]
+      interval: 3s
+      timeout: 5s
+      retries: 40
+  migrate:
+    build: .
+    command: ["bun", "run", "migrate"]
+    environment: &env
+      DATABASE_URL: postgres://wagering:wagering@postgres:5432/wagering
+      MIGRATION_DATABASE_URL: postgres://wagering:wagering@postgres:5432/wagering
+      SQS_ENDPOINT: http://localstack:4566
+      AWS_REGION: us-east-1
+      AWS_ACCESS_KEY_ID: test
+      AWS_SECRET_ACCESS_KEY: test
+      PROVISION_LOCAL_ROLE: '1'
+    depends_on:
+      postgres: {condition: service_healthy}
+      localstack: {condition: service_healthy}
+  api:
+    build: .
+    environment: &runtime
+      <<: *env
+      DATABASE_URL: postgres://wagering_app:local_app_only@postgres:5432/wagering
+      PROVISION_LOCAL_ROLE: '0'
+      APP_HOST: 0.0.0.0
+      LOG_HMAC_KEY: ${LOG_HMAC_KEY:-}
+      MIGRATION_DATABASE_URL: ''
+    ports: ["127.0.0.1:3000-3002:3000"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    stop_grace_period: 45s
+  worker:
+    build: .
+    command: ["bun", "run", "worker"]
+    environment: *runtime
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    stop_grace_period: 45s
+volumes:
+  pgdata:

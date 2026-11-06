@@ -1,0 +1,377 @@
+{
+  "runId": "5002890b-643d-4dfe-a428-6e2d91433190",
+  "startedAt": "2026-11-06T04:56:29.345Z",
+  "finishedAt": "2026-11-06T04:56:38.935Z",
+  "environment": {
+    "bun": "1.3.11",
+    "os": "win32 10.0.26200",
+    "cpu": "AMD Ryzen 7 5700X3D 8-Core Processor           ",
+    "logicalCpus": 16,
+    "hostMemoryGiB": 31.909015655517578,
+    "docker": "29.1.3",
+    "dockerResources": "CPUs=16 MemoryBytes=16718688256",
+    "compose": "{\"Command\":\"\\\"/usr/local/bin/dock…\\\"\",\"CreatedAt\":\"2026-11-06 01:56:24 -0300 -03\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"00cc0892e310\",\"Image\":\"backend-challenge-api\",\"Labels\":\"com.docker.compose.oneoff=False,com.docker.compose.project.working_dir=<workspace>,com.docker.compose.version=2.40.3,org.opencontainers.image.version=1.3.11,com.docker.compose.container-number=1,com.docker.compose.replace=api-1,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.title=bun,org.opencontainers.image.url=https://github.com/oven-sh/bun,desktop.docker.io/ports/3000/tcp=127.0.0.1:3000-3002,org.opencontainers.image.revision=a04817ce2b7f1a1e8b7cbf8af8f2c027ab072f1d,org.opencontainers.image.source=https://github.com/oven-sh/bun,com.docker.compose.image=sha256:0932318d33b44ef0da0ffc4fc064945c0156b18f30c284611665d2531772c111,com.docker.compose.project=backend-challenge,com.docker.compose.project.config_files=<workspace>\\\\compose.yaml,com.docker.compose.service=api,org.opencontainers.image.created=2026-03-18T04:34:00.054Z,org.opencontainers.image.description=Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one,org.opencontainers.image.licenses=NOASSERTION,com.docker.compose.config-hash=c0d4d161574aa9683be303e12184348c05b0df03e1ff00427a48d8251e0a5cff,com.docker.compose.depends_on=migrate:service_completed_successfully:false\",\"LocalVolumes\":\"0\",\"Mounts\":\"\",\"Name\":\"backend-challenge-api-1\",\"Names\":\"backend-challenge-api-1\",\"Networks\":\"backend-challenge_default\",\"Ports\":\"127.0.0.1:3002-\\u003e3000/tcp\",\"Project\":\"backend-challenge\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":3000,\"PublishedPort\":3002,\"Protocol\":\"tcp\"}],\"RunningFor\":\"6 seconds ago\",\"Service\":\"api\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 2 seconds\"}\n{\"Command\":\"\\\"/usr/local/bin/dock…\\\"\",\"CreatedAt\":\"2026-11-06 01:56:24 -0300 -03\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"91a641167065\",\"Image\":\"backend-challenge-api\",\"Labels\":\"com.docker.compose.image=sha256:0932318d33b44ef0da0ffc4fc064945c0156b18f30c284611665d2531772c111,com.docker.compose.project.working_dir=<workspace>,com.docker.compose.service=api,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.description=Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one,org.opencontainers.image.source=https://github.com/oven-sh/bun,com.docker.compose.depends_on=migrate:service_completed_successfully:false,com.docker.compose.oneoff=False,com.docker.compose.version=2.40.3,desktop.docker.io/ports/3000/tcp=127.0.0.1:3000-3002,org.opencontainers.image.created=2026-03-18T04:34:00.054Z,org.opencontainers.image.title=bun,org.opencontainers.image.url=https://github.com/oven-sh/bun,com.docker.compose.container-number=2,com.docker.compose.project=backend-challenge,com.docker.compose.replace=api-2,com.docker.compose.config-hash=c0d4d161574aa9683be303e12184348c05b0df03e1ff00427a48d8251e0a5cff,com.docker.compose.project.config_files=<workspace>\\\\compose.yaml,org.opencontainers.image.licenses=NOASSERTION,org.opencontainers.image.revision=a04817ce2b7f1a1e8b7cbf8af8f2c027ab072f1d,org.opencontainers.image.version=1.3.11\",\"LocalVolumes\":\"0\",\"Mounts\":\"\",\"Name\":\"backend-challenge-api-2\",\"Names\":\"backend-challenge-api-2\",\"Networks\":\"backend-challenge_default\",\"Ports\":\"127.0.0.1:3001-\\u003e3000/tcp\",\"Project\":\"backend-challenge\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":3000,\"PublishedPort\":3001,\"Protocol\":\"tcp\"}],\"RunningFor\":\"6 seconds ago\",\"Service\":\"api\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 2 seconds\"}\n{\"Command\":\"\\\"/usr/local/bin/dock…\\\"\",\"CreatedAt\":\"2026-11-06 01:56:24 -0300 -03\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"e2ed1804e94d\",\"Image\":\"backend-challenge-api\",\"Labels\":\"com.docker.compose.image=sha256:0932318d33b44ef0da0ffc4fc064945c0156b18f30c284611665d2531772c111,com.docker.compose.oneoff=False,com.docker.compose.replace=api-3,org.opencontainers.image.revision=a04817ce2b7f1a1e8b7cbf8af8f2c027ab072f1d,com.docker.compose.project.working_dir=<workspace>,com.docker.compose.service=api,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.description=Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one,org.opencontainers.image.source=https://github.com/oven-sh/bun,org.opencontainers.image.title=bun,com.docker.compose.container-number=3,com.docker.compose.project.config_files=<workspace>\\\\compose.yaml,com.docker.compose.version=2.40.3,desktop.docker.io/ports/3000/tcp=127.0.0.1:3000-3002,org.opencontainers.image.created=2026-03-18T04:34:00.054Z,org.opencontainers.image.url=https://github.com/oven-sh/bun,com.docker.compose.depends_on=migrate:service_completed_successfully:false,com.docker.compose.project=backend-challenge,org.opencontainers.image.licenses=NOASSERTION,org.opencontainers.image.version=1.3.11,com.docker.compose.config-hash=c0d4d161574aa9683be303e12184348c05b0df03e1ff00427a48d8251e0a5cff\",\"LocalVolumes\":\"0\",\"Mounts\":\"\",\"Name\":\"backend-challenge-api-3\",\"Names\":\"backend-challenge-api-3\",\"Networks\":\"backend-challenge_default\",\"Ports\":\"127.0.0.1:3000-\\u003e3000/tcp\",\"Project\":\"backend-challenge\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":3000,\"PublishedPort\":3000,\"Protocol\":\"tcp\"}],\"RunningFor\":\"6 seconds ago\",\"Service\":\"api\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 2 seconds\"}\n{\"Command\":\"\\\"docker-entrypoint.sh\\\"\",\"CreatedAt\":\"2026-11-06 01:54:04 -0300 -03\",\"ExitCode\":0,\"Health\":\"healthy\",\"ID\":\"0f3732425001\",\"Image\":\"localstack/localstack:4.10.0\",\"Labels\":\"authors=LocalStack Contributors,com.docker.compose.project=backend-challenge,com.docker.compose.replace=localstack-1,desktop.docker.io/ports.scheme=v2,maintainer=LocalStack Team (info@localstack.cloud),com.docker.compose.container-number=1,com.docker.compose.image=sha256:a65ee2a9d45a7a34a1f1faae515d2e577ce11210312c077700ccc82daefec238,com.docker.compose.project.config_files=<workspace>\\\\compose.yaml,com.docker.compose.project.working_dir=<workspace>,com.docker.compose.service=localstack,com.docker.compose.version=2.40.3,description=LocalStack Docker image,desktop.docker.io/ports/4566/tcp=127.0.0.1:4566,com.docker.compose.config-hash=d6b14ad6355bc5b409dfc2bd43a898e54213b0420a8c59df66db08740e40f63a,com.docker.compose.depends_on=,com.docker.compose.oneoff=False\",\"LocalVolumes\":\"1\",\"Mounts\":\"b2d745ad2a57fd…\",\"Name\":\"backend-challenge-localstack-1\",\"Names\":\"backend-challenge-localstack-1\",\"Networks\":\"backend-challenge_default\",\"Ports\":\"127.0.0.1:4566-\\u003e4566/tcp\",\"Project\":\"backend-challenge\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":4566,\"PublishedPort\":4566,\"Protocol\":\"tcp\"}],\"RunningFor\":\"2 minutes ago\",\"Service\":\"localstack\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 2 minutes (healthy)\"}\n{\"Command\":\"\\\"docker-entrypoint.s…\\\"\",\"CreatedAt\":\"2026-11-06 01:54:04 -0300 -03\",\"ExitCode\":0,\"Health\":\"healthy\",\"ID\":\"c98974c1b00c\",\"Image\":\"postgres:17-alpine\",\"Labels\":\"com.docker.compose.image=sha256:3540c0362c809df084ffac0ae69fe794515f9de92692f02178bcdce0ef0302ac,com.docker.compose.service=postgres,desktop.docker.io/ports.scheme=v2,desktop.docker.io/ports/5432/tcp=127.0.0.1:55432,com.docker.compose.container-number=1,com.docker.compose.depends_on=,com.docker.compose.oneoff=False,com.docker.compose.project=backend-challenge,com.docker.compose.project.config_files=<workspace>\\\\compose.yaml,com.docker.compose.project.working_dir=<workspace>,com.docker.compose.replace=postgres-1,com.docker.compose.version=2.40.3,com.docker.compose.config-hash=e9d3e7d280977c4330baf93fb54963376f6f42168ce26eb83f13552c35cf61d4\",\"LocalVolumes\":\"1\",\"Mounts\":\"backend-challe…\",\"Name\":\"backend-challenge-postgres-1\",\"Names\":\"backend-challenge-postgres-1\",\"Networks\":\"backend-challenge_default\",\"Ports\":\"127.0.0.1:55432-\\u003e5432/tcp\",\"Project\":\"backend-challenge\",\"Publishers\":[{\"URL\":\"127.0.0.1\",\"TargetPort\":5432,\"PublishedPort\":55432,\"Protocol\":\"tcp\"}],\"RunningFor\":\"2 minutes ago\",\"Service\":\"postgres\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 2 minutes (healthy)\"}\n{\"Command\":\"\\\"/usr/local/bin/dock…\\\"\",\"CreatedAt\":\"2026-11-06 01:56:24 -0300 -03\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"7cefabe44e5d\",\"Image\":\"backend-challenge-worker\",\"Labels\":\"com.docker.compose.config-hash=f7ec1a3af11e0f8b6b83c05d25f0353526a4b09141c2c2765d211a2c25495099,com.docker.compose.depends_on=migrate:service_completed_successfully:false,com.docker.compose.oneoff=False,com.docker.compose.replace=worker-1,com.docker.compose.service=worker,org.opencontainers.image.licenses=NOASSERTION,com.docker.compose.image=sha256:cb230f7a0ceceba43c6e586acc4dc0cbc8cc87e4c2ed4a335f29586e456d7aea,org.opencontainers.image.title=bun,org.opencontainers.image.url=https://github.com/oven-sh/bun,com.docker.compose.container-number=1,com.docker.compose.project=backend-challenge,com.docker.compose.project.config_files=<workspace>\\\\compose.yaml,com.docker.compose.version=2.40.3,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.created=2026-03-18T04:34:00.054Z,com.docker.compose.project.working_dir=<workspace>,org.opencontainers.image.description=Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one,org.opencontainers.image.revision=a04817ce2b7f1a1e8b7cbf8af8f2c027ab072f1d,org.opencontainers.image.source=https://github.com/oven-sh/bun,org.opencontainers.image.version=1.3.11\",\"LocalVolumes\":\"0\",\"Mounts\":\"\",\"Name\":\"backend-challenge-worker-1\",\"Names\":\"backend-challenge-worker-1\",\"Networks\":\"backend-challenge_default\",\"Ports\":\"\",\"Project\":\"backend-challenge\",\"Publishers\":[],\"RunningFor\":\"6 seconds ago\",\"Service\":\"worker\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 2 seconds\"}\n{\"Command\":\"\\\"/usr/local/bin/dock…\\\"\",\"CreatedAt\":\"2026-11-06 01:56:24 -0300 -03\",\"ExitCode\":0,\"Health\":\"\",\"ID\":\"d8eda44e1dcc\",\"Image\":\"backend-challenge-worker\",\"Labels\":\"com.docker.compose.project.working_dir=<workspace>,com.docker.compose.image=sha256:cb230f7a0ceceba43c6e586acc4dc0cbc8cc87e4c2ed4a335f29586e456d7aea,com.docker.compose.oneoff=False,com.docker.compose.project.config_files=<workspace>\\\\compose.yaml,com.docker.compose.replace=worker-2,desktop.docker.io/ports.scheme=v2,org.opencontainers.image.description=Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one,org.opencontainers.image.licenses=NOASSERTION,org.opencontainers.image.revision=a04817ce2b7f1a1e8b7cbf8af8f2c027ab072f1d,com.docker.compose.config-hash=f7ec1a3af11e0f8b6b83c05d25f0353526a4b09141c2c2765d211a2c25495099,com.docker.compose.depends_on=migrate:service_completed_successfully:false,com.docker.compose.project=backend-challenge,com.docker.compose.service=worker,com.docker.compose.version=2.40.3,org.opencontainers.image.version=1.3.11,org.opencontainers.image.created=2026-03-18T04:34:00.054Z,org.opencontainers.image.source=https://github.com/oven-sh/bun,org.opencontainers.image.title=bun,org.opencontainers.image.url=https://github.com/oven-sh/bun,com.docker.compose.container-number=2\",\"LocalVolumes\":\"0\",\"Mounts\":\"\",\"Name\":\"backend-challenge-worker-2\",\"Names\":\"backend-challenge-worker-2\",\"Networks\":\"backend-challenge_default\",\"Ports\":\"\",\"Project\":\"backend-challenge\",\"Publishers\":[],\"RunningFor\":\"6 seconds ago\",\"Service\":\"worker\",\"Size\":\"0B\",\"State\":\"running\",\"Status\":\"Up 2 seconds\"}",
+    "postgres": "17.11",
+    "git": "c7143e6d041585d6913f56eb7415105e074f83dc",
+    "dirty": "M README.md\n?? .dockerignore\n?? .gitignore\n?? ARCHITECTURE.md\n?? Dockerfile\n?? LOAD_TEST.md\n?? TESTING.md\n?? bun.lock\n?? compose.yaml\n?? package.json\n?? reports/\n?? requests.http\n?? src/\n?? test/\n?? tsconfig.json"
+  },
+  "configuration": {
+    "urls": [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "http://localhost:3002"
+    ],
+    "count": 300,
+    "concurrency": 24,
+    "walletCount": 20,
+    "drainSeconds": 90
+  },
+  "methodology": "Closed-loop fixed requests, round-robin across APIs; 30 warmup requests excluded; hot wallet then distributed wallets then 50 duplicates. Client latency includes body parsing, failures and network. No target RPS; no coordinated-omission correction. Outbox SQL sampled every 1s, scoped to run wallets. API metric deltas sum all replicas. No CPU isolation.",
+  "warmup": {
+    "name": "warmup",
+    "requests": 30,
+    "concurrency": 5,
+    "wallets": 1,
+    "elapsedSeconds": 0.2551051,
+    "throughputRps": 117.59858975771164,
+    "successfulRps": 117.59858975771164,
+    "success": 30,
+    "errors": 0,
+    "errorRate": 0,
+    "replays": 0,
+    "uniqueAcknowledged": 30,
+    "statuses": {
+      "200": 30
+    },
+    "latencyMs": {
+      "p50": 31.279399999999896,
+      "p95": 91.99170000000004,
+      "p99": 95.7983999999999
+    },
+    "lockConflicts": 0,
+    "databaseRetries": 0
+  },
+  "results": [
+    {
+      "name": "hot-wallet",
+      "requests": 300,
+      "concurrency": 24,
+      "wallets": 1,
+      "elapsedSeconds": 2.1349793999999997,
+      "throughputRps": 140.51657828642283,
+      "successfulRps": 140.51657828642283,
+      "success": 300,
+      "errors": 0,
+      "errorRate": 0,
+      "replays": 0,
+      "uniqueAcknowledged": 300,
+      "statuses": {
+        "200": 300
+      },
+      "latencyMs": {
+        "p50": 23.626000000000204,
+        "p95": 713.3545999999997,
+        "p99": 859.002
+      },
+      "lockConflicts": 0,
+      "databaseRetries": 0
+    },
+    {
+      "name": "distributed-wallets",
+      "requests": 300,
+      "concurrency": 24,
+      "wallets": 20,
+      "elapsedSeconds": 0.2923541999999998,
+      "throughputRps": 1026.15252320644,
+      "successfulRps": 1026.15252320644,
+      "success": 300,
+      "errors": 0,
+      "errorRate": 0,
+      "replays": 0,
+      "uniqueAcknowledged": 300,
+      "statuses": {
+        "200": 300
+      },
+      "latencyMs": {
+        "p50": 19.97779999999966,
+        "p95": 37.503200000000106,
+        "p99": 56.64919999999984
+      },
+      "lockConflicts": 0,
+      "databaseRetries": 0
+    },
+    {
+      "name": "duplicates",
+      "requests": 50,
+      "concurrency": 50,
+      "wallets": 1,
+      "elapsedSeconds": 0.14990160000000013,
+      "throughputRps": 333.5521435394949,
+      "successfulRps": 333.5521435394949,
+      "success": 50,
+      "errors": 0,
+      "errorRate": 0,
+      "replays": 49,
+      "uniqueAcknowledged": 1,
+      "statuses": {
+        "200": 50
+      },
+      "latencyMs": {
+        "p50": 71.01440000000002,
+        "p95": 140.5621999999994,
+        "p99": 149.27599999999984
+      },
+      "lockConflicts": 0,
+      "databaseRetries": 0
+    }
+  ],
+  "outbox": {
+    "samples": [
+      {
+        "elapsedSeconds": 1.4463479000000001,
+        "pending": 18,
+        "oldestPendingSeconds": 0.064925
+      },
+      {
+        "elapsedSeconds": 2.4477658,
+        "pending": 8,
+        "oldestPendingSeconds": 0.479885
+      },
+      {
+        "elapsedSeconds": 3.4476161000000003,
+        "pending": 8,
+        "oldestPendingSeconds": 0.032806
+      },
+      {
+        "elapsedSeconds": 4.3179534,
+        "pending": 482,
+        "oldestPendingSeconds": 0.397327
+      },
+      {
+        "elapsedSeconds": 4.457162,
+        "pending": 402,
+        "oldestPendingSeconds": 0.4919
+      },
+      {
+        "elapsedSeconds": 5.4857241000000005,
+        "pending": 0,
+        "oldestPendingSeconds": 0
+      },
+      {
+        "elapsedSeconds": 6.4988649999999994,
+        "pending": 0,
+        "oldestPendingSeconds": 0
+      },
+      {
+        "elapsedSeconds": 7.5160258,
+        "pending": 0,
+        "oldestPendingSeconds": 0
+      },
+      {
+        "elapsedSeconds": 8.532877899999999,
+        "pending": 0,
+        "oldestPendingSeconds": 0
+      },
+      {
+        "elapsedSeconds": 9.338278899999999,
+        "pending": 0,
+        "oldestPendingSeconds": 0
+      }
+    ],
+    "peakPending": 482,
+    "peakOldestPendingSeconds": 0.4919,
+    "finalPending": 0,
+    "drainElapsedSeconds": 5.2745392
+  },
+  "correctness": {
+    "wallets": [
+      {
+        "walletId": "e2959eb1-1d75-4523-999a-f6d99b519aaa",
+        "storedBalance": "99999.70",
+        "ledgerBalance": "99999.70",
+        "debits": 30,
+        "expectedDebits": 30,
+        "consistent": true
+      },
+      {
+        "walletId": "98c88b5b-7ed9-40e6-a7e3-88fee8272f96",
+        "storedBalance": "99997.00",
+        "ledgerBalance": "99997.00",
+        "debits": 300,
+        "expectedDebits": 300,
+        "consistent": true
+      },
+      {
+        "walletId": "6d11f0d6-f189-425e-b5d7-14942aa9d31b",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "b6dc1149-55b9-4c0f-9629-001b8a09c0db",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "6862a968-5f8b-4bb8-996a-dae07676d479",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "72678878-5c9a-4a28-b9ac-af90028bc8a9",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "93d3dc0a-2966-4bd9-949d-b52aa3f4219d",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "b5c43ea0-0099-4c56-a702-851e929a9944",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "5a90ad4a-8833-41be-a111-d03817f42dd4",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "4380549c-bafa-4054-b37f-a97f0b4c76e0",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "1ffdab5a-4e52-49d1-a87d-da63328a05e3",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "64d4be77-d4a4-4c04-96a3-a70d3e1ccf32",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "a6de0b26-e03f-421c-87d8-8b8be1828092",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "bbe0a51e-4f0f-4fa1-95dc-60fe43c970f9",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "6ca910a7-06dd-4167-9828-70b532bb729f",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "dd576451-c3e7-4699-95e6-6558bc4629f9",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "3417c67c-201f-43a0-94d5-0e14d4843436",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "11e345f5-fea1-4ec3-8842-de46ffa9eea1",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "d85079d8-d631-453e-afaf-e3b5520b4c26",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "05b2635f-4db8-4169-bf1c-8900c3ed87e8",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "1d72f9fb-c4ed-4472-b3f4-9def61d4511c",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "799e30de-04df-4c81-b65c-de543af3d675",
+        "storedBalance": "99999.85",
+        "ledgerBalance": "99999.85",
+        "debits": 15,
+        "expectedDebits": 15,
+        "consistent": true
+      },
+      {
+        "walletId": "a6cc11fc-f6c3-4cc4-a703-e8bc5a642590",
+        "storedBalance": "99999.99",
+        "ledgerBalance": "99999.99",
+        "debits": 1,
+        "expectedDebits": 1,
+        "consistent": true
+      }
+    ],
+    "duplicateLedgerRows": 0,
+    "duplicateScenarioDebits": 1,
+    "passed": true
+  }
+}

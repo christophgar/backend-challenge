@@ -1,0 +1,88 @@
+$ bun test test/money.test.ts test/domain.test.ts test/policy.test.ts test/logging.test.ts
+bun test v1.3.11 (af24e281)
+
+test\domain.test.ts:
+(pass) wallet rejects negative opening, zero movements and currency mismatch without mutation
+(pass) BET validates its public contract
+(pass) WIN validates its public contract [16.00ms]
+(pass) LOSS validates its public contract
+(pass) REFUND validates its public contract
+(pass) ROLLBACK validates its public contract
+(pass) wallet mutations produce balanced immutable ledger entries
+(pass) terminal transaction transitions fail
+(pass) canonical hash sorts nested keys
+
+test\logging.test.ts:
+(pass) logger drops unapproved fields, nested payloads and error details
+(pass) all identifiers are pseudonymized including UUIDs, and injection cannot create log lines
+(pass) unknown events, non-string IDs and oversized IDs cannot leak arbitrary values
+(pass) concurrent contexts preserve error correlation without leaking another operation [16.00ms]
+(pass) src/main.ts startup failure does not expose connection credentials [859.00ms]
+(pass) src/worker.ts startup failure does not expose connection credentials [563.00ms]
+
+test\money.test.ts:
+(pass) Money > fixed scale, comparisons, zero and negation remain exact
+(pass) Money > rejects 1.005 rather than implicitly rounding
+(pass) Money > rejects 1.004 rather than implicitly rounding
+(pass) Money > rejects 1.999 rather than implicitly rounding
+(pass) Money > rejects 0.000 rather than implicitly rounding
+(pass) Money > rejects 1.0 rather than implicitly rounding
+(pass) Money > rejects +1.00 rather than implicitly rounding
+(pass) Money > rejects 1,00 rather than implicitly rounding
+(pass) Money > rejects 0x10 rather than implicitly rounding
+(pass) Money > rejects 1.00  rather than implicitly rounding
+(pass) Money > rejects non-string monetary input
+(pass) Money > every binary operation rejects mixed currencies
+(pass) Money > preserves precision beyond safe integer and leaves operands unchanged
+(pass) Money > rejects NaN
+(pass) Money > rejects Infinity
+(pass) Money > rejects 
+(pass) Money > rejects 1e2
+(pass) Money > rejects -1.00
+(pass) Money > rejects 1.001
+(pass) Money > rejects  1.00
+(pass) Money > rejects 1
+(pass) Money > rejects 01.00
+(pass) Money > supports exact signed internal arithmetic
+(pass) Money > rejects currency mismatch
+
+test\policy.test.ts:
+(pass) BET produces the financial direction required by the business
+(pass) WIN produces the financial direction required by the business
+(pass) LOSS produces the financial direction required by the business
+(pass) REFUND produces the financial direction required by the business
+(pass) ROLLBACK produces the financial direction required by the business
+(pass) ROLLBACK inverts BET
+(pass) ROLLBACK inverts WIN
+(pass) ROLLBACK inverts REFUND
+(pass) BET rejects insufficient funds but permits exact available balance
+(pass) rollback has a distinct insufficient funds failure
+(pass) REFUND requires full, unique reversal
+(pass) ROLLBACK requires full, unique reversal
+(pass) reference must share providerId
+(pass) reference must share playerId
+(pass) reference must share walletId
+(pass) reference must share roundId
+(pass) wallet and reference currency conflicts are distinguished
+(pass) cannot reverse a REJECTED reference
+(pass) cannot reverse a FAILED reference
+(pass) REFUND rejects reference kind WIN
+(pass) REFUND rejects reference kind LOSS
+(pass) REFUND rejects reference kind REFUND
+(pass) REFUND rejects reference kind ROLLBACK
+(pass) REFUND rejects reference kind OPENING
+(pass) ROLLBACK rejects reference kind LOSS
+(pass) ROLLBACK rejects reference kind ROLLBACK
+(pass) ROLLBACK rejects reference kind OPENING
+(pass) WIN optionally references only BET
+(pass) LOSS optionally references only BET
+(pass) missing or unfinished references wait, then reject at configured boundaries
+(pass) resolved reference proceeds even after waiting, without changing input values
+(pass) credit overflow and player mismatch reject before balance mutation
+(pass) idempotency distinguishes new, identical, divergent and conflicting identities
+(pass) only pending reference can be reprocessed; terminal states always replay
+
+ 73 pass
+ 0 fail
+ 179 expect() calls
+Ran 73 tests across 4 files. [1.61s]
